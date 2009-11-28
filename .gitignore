@@ -1,0 +1,4 @@
+.DS_Store
+build
+Fan Control.xcodeproj/*.mode1*
+Fan Control.xcodeproj/*.pbxuser

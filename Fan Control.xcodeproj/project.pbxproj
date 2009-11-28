@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		65C120860ADD28830005FBFF /* Make All */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 65C120900ADD28B10005FBFF /* Build configuration list for PBXAggregateTarget "Make All" */;
+			buildPhases = (
+			);
+			dependencies = (
+				65C1208A0ADD288B0005FBFF /* PBXTargetDependency */,
+				65C1208C0ADD288D0005FBFF /* PBXTargetDependency */,
+			);
+			name = "Make All";
+			productName = "Make All";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		6506A80D0ADE34B300BAE10A /* FanControl.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6506A80C0ADE34B300BAE10A /* FanControl.icns */; };
+		6506A82C0ADE362700BAE10A /* PrefPaneIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 6506A82B0ADE362700BAE10A /* PrefPaneIcon.tiff */; };
+		6508272C0AE24F3A009F3252 /* MFTemperatureTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6508272B0AE24F3A009F3252 /* MFTemperatureTransformer.m */; };
+		65A7742A0ADF8579002E4AB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		65C11DD10ADCD10E0005FBFF /* MFDaemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C11DD00ADCD10E0005FBFF /* MFDaemon.m */; };
+		65C11DE30ADCD1B80005FBFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C11DE20ADCD1B80005FBFF /* Foundation.framework */; };
+		65C11F040ADCD4590005FBFF /* smc.c in Sources */ = {isa = PBXBuildFile; fileRef = 65C1192C0ADC17F00005FBFF /* smc.c */; };
+		65C11FD40ADCD6940005FBFF /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C1194C0ADC1CC10005FBFF /* IOKit.framework */; };
+		65C1202A0ADD06680005FBFF /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C120290ADD06680005FBFF /* PreferencePanes.framework */; };
+		65C120300ADD06C60005FBFF /* MFPreferencePane.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C1202F0ADD06C60005FBFF /* MFPreferencePane.m */; };
+		65C120360ADD078A0005FBFF /* PreferencePane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 65C120350ADD078A0005FBFF /* PreferencePane.nib */; };
+		65C123E90ADD52A00005FBFF /* MFChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C123E80ADD52A00005FBFF /* MFChartView.m */; };
+		8299EA6510C14159003B147D /* FanObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8299EA1A10C12DB9003B147D /* FanObject.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65C120890ADD288B0005FBFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65C11C010ADCCC7C0005FBFF;
+			remoteInfo = MacProFanDaemon;
+		};
+		65C1208B0ADD288D0005FBFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65C120230ADD064D0005FBFF;
+			remoteInfo = MacProFanPref;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* FanControl_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanControl_Prefix.pch; sourceTree = "<group>"; };
+		6506A80C0ADE34B300BAE10A /* FanControl.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = FanControl.icns; sourceTree = "<group>"; };
+		6506A82B0ADE362700BAE10A /* PrefPaneIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = PrefPaneIcon.tiff; sourceTree = "<group>"; };
+		6508272A0AE24F3A009F3252 /* MFTemperatureTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTemperatureTransformer.h; sourceTree = "<group>"; };
+		6508272B0AE24F3A009F3252 /* MFTemperatureTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTemperatureTransformer.m; sourceTree = "<group>"; };
+		65A7743B0ADF8732002E4AB8 /* MFDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDefinitions.h; sourceTree = "<group>"; };
+		65C1192B0ADC17F00005FBFF /* smc.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = smc.h; sourceTree = "<group>"; };
+		65C1192C0ADC17F00005FBFF /* smc.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = smc.c; sourceTree = "<group>"; };
+		65C1194C0ADC1CC10005FBFF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		65C11C020ADCCC7C0005FBFF /* FanControlDaemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FanControlDaemon; sourceTree = BUILT_PRODUCTS_DIR; };
+		65C11DCF0ADCD10E0005FBFF /* MFDaemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDaemon.h; sourceTree = "<group>"; };
+		65C11DD00ADCD10E0005FBFF /* MFDaemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFDaemon.m; sourceTree = "<group>"; };
+		65C11DE20ADCD1B80005FBFF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		65C120240ADD064D0005FBFF /* Fan Control.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fan Control.prefPane"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65C120290ADD06680005FBFF /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
+		65C1202E0ADD06C60005FBFF /* MFPreferencePane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPreferencePane.h; sourceTree = "<group>"; };
+		65C1202F0ADD06C60005FBFF /* MFPreferencePane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFPreferencePane.m; sourceTree = "<group>"; };
+		65C120350ADD078A0005FBFF /* PreferencePane.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = PreferencePane.nib; sourceTree = "<group>"; };
+		65C120930ADD28B90005FBFF /* MFProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFProtocol.h; sourceTree = "<group>"; };
+		65C123E70ADD52A00005FBFF /* MFChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFChartView.h; sourceTree = "<group>"; };
+		65C123E80ADD52A00005FBFF /* MFChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFChartView.m; sourceTree = "<group>"; };
+		8299EA1910C12DB9003B147D /* FanObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanObject.h; sourceTree = "<group>"; };
+		8299EA1A10C12DB9003B147D /* FanObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FanObject.m; sourceTree = "<group>"; };
+		8299EA1B10C130C1003B147D /* Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Test.plist; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65C11C000ADCCC7C0005FBFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65C11DE30ADCD1B80005FBFF /* Foundation.framework in Frameworks */,
+				65C11FD40ADCD6940005FBFF /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65C120220ADD064D0005FBFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65C1202A0ADD06680005FBFF /* PreferencePanes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				65A7743B0ADF8732002E4AB8 /* MFDefinitions.h */,
+				65C120930ADD28B90005FBFF /* MFProtocol.h */,
+				8299EA1910C12DB9003B147D /* FanObject.h */,
+				8299EA1A10C12DB9003B147D /* FanObject.m */,
+				65C11DCF0ADCD10E0005FBFF /* MFDaemon.h */,
+				65C11DD00ADCD10E0005FBFF /* MFDaemon.m */,
+				65C1202E0ADD06C60005FBFF /* MFPreferencePane.h */,
+				65C1202F0ADD06C60005FBFF /* MFPreferencePane.m */,
+				65C123E70ADD52A00005FBFF /* MFChartView.h */,
+				65C123E80ADD52A00005FBFF /* MFChartView.m */,
+				6508272A0AE24F3A009F3252 /* MFTemperatureTransformer.h */,
+				6508272B0AE24F3A009F3252 /* MFTemperatureTransformer.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65C120290ADD06680005FBFF /* PreferencePanes.framework */,
+				65C11DE20ADCD1B80005FBFF /* Foundation.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				65C1194C0ADC1CC10005FBFF /* IOKit.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65C11C020ADCCC7C0005FBFF /* FanControlDaemon */,
+				65C120240ADD064D0005FBFF /* Fan Control.prefPane */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* MacProFan */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = MacProFan;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				65C1192A0ADC17D00005FBFF /* SMC */,
+				32CA4F630368D1EE00C91783 /* FanControl_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6506A82B0ADE362700BAE10A /* PrefPaneIcon.tiff */,
+				6506A80C0ADE34B300BAE10A /* FanControl.icns */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				65C120350ADD078A0005FBFF /* PreferencePane.nib */,
+				8299EA1B10C130C1003B147D /* Test.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65C1192A0ADC17D00005FBFF /* SMC */ = {
+			isa = PBXGroup;
+			children = (
+				65C1192B0ADC17F00005FBFF /* smc.h */,
+				65C1192C0ADC17F00005FBFF /* smc.c */,
+			);
+			name = SMC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65C11C010ADCCC7C0005FBFF /* Daemon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65C11C040ADCCCC00005FBFF /* Build configuration list for PBXNativeTarget "Daemon" */;
+			buildPhases = (
+				65C11BFF0ADCCC7C0005FBFF /* Sources */,
+				65C11C000ADCCC7C0005FBFF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Daemon;
+			productName = MacProFanDaemon;
+			productReference = 65C11C020ADCCC7C0005FBFF /* FanControlDaemon */;
+			productType = "com.apple.product-type.tool";
+		};
+		65C120230ADD064D0005FBFF /* Preference Pane */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65C120260ADD064E0005FBFF /* Build configuration list for PBXNativeTarget "Preference Pane" */;
+			buildPhases = (
+				65C120200ADD064D0005FBFF /* Resources */,
+				65C120210ADD064D0005FBFF /* Sources */,
+				65C120220ADD064D0005FBFF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Preference Pane";
+			productName = MacProFanPref;
+			productReference = 65C120240ADD064D0005FBFF /* Fan Control.prefPane */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Fan Control" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* MacProFan */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65C120860ADD28830005FBFF /* Make All */,
+				65C11C010ADCCC7C0005FBFF /* Daemon */,
+				65C120230ADD064D0005FBFF /* Preference Pane */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65C120200ADD064D0005FBFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65C120360ADD078A0005FBFF /* PreferencePane.nib in Resources */,
+				6506A80D0ADE34B300BAE10A /* FanControl.icns in Resources */,
+				6506A82C0ADE362700BAE10A /* PrefPaneIcon.tiff in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65C11BFF0ADCCC7C0005FBFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65C11DD10ADCD10E0005FBFF /* MFDaemon.m in Sources */,
+				65C11F040ADCD4590005FBFF /* smc.c in Sources */,
+				8299EA6510C14159003B147D /* FanObject.m in Sources */,
+				65A7742A0ADF8579002E4AB8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65C120210ADD064D0005FBFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65C120300ADD06C60005FBFF /* MFPreferencePane.m in Sources */,
+				65C123E90ADD52A00005FBFF /* MFChartView.m in Sources */,
+				6508272C0AE24F3A009F3252 /* MFTemperatureTransformer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65C1208A0ADD288B0005FBFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65C11C010ADCCC7C0005FBFF /* Daemon */;
+			targetProxy = 65C120890ADD288B0005FBFF /* PBXContainerItemProxy */;
+		};
+		65C1208C0ADD288D0005FBFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65C120230ADD064D0005FBFF /* Preference Pane */;
+			targetProxy = 65C1208B0ADD288D0005FBFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		65C11C050ADCCCC00005FBFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = "$(HOME)/bin";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FanControlDaemon;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		65C11C060ADCCCC00005FBFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = "$(HOME)/bin";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FanControlDaemon;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		65C120270ADD064E0005FBFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/System/Library/Frameworks/PreferencePanes.framework/Headers,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Fan Control";
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		65C120280ADD064E0005FBFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/System/Library/Frameworks/PreferencePanes.framework/Headers,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Fan Control";
+				WRAPPER_EXTENSION = prefPane;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		65C120910ADD28B10005FBFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Make All";
+			};
+			name = Debug;
+		};
+		65C120920ADD28B10005FBFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "Make All";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65C11C040ADCCCC00005FBFF /* Build configuration list for PBXNativeTarget "Daemon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65C11C050ADCCCC00005FBFF /* Debug */,
+				65C11C060ADCCCC00005FBFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65C120260ADD064E0005FBFF /* Build configuration list for PBXNativeTarget "Preference Pane" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65C120270ADD064E0005FBFF /* Debug */,
+				65C120280ADD064E0005FBFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65C120900ADD28B10005FBFF /* Build configuration list for PBXAggregateTarget "Make All" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65C120910ADD28B10005FBFF /* Debug */,
+				65C120920ADD28B10005FBFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Fan Control" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
