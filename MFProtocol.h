@@ -30,5 +30,5 @@
 - (void)setUpperThreshold:(float)newUpperThreshold Fan:(FanType)tf;
 - (BOOL)fahrenheit;
 - (void)setFahrenheit:(BOOL)newFahrenheit;
-- (void)temperature:(float *)temperature leftFanRpm:(int *)leftFanRpm rightFanRpm:(int *)rightFanRpm;
+- (void)cpuTemperature:(float *)cpuTemperature gpuTemperature:(float *)gpuTemperature leftFanRpm:(int *)leftFanRpm rightFanRpm:(int *)rightFanRpm;
 @end

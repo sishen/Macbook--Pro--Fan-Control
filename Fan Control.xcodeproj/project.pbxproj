@@ -81,7 +81,6 @@
 		65C123E80ADD52A00005FBFF /* MFChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFChartView.m; sourceTree = "<group>"; };
 		8299EA1910C12DB9003B147D /* FanObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanObject.h; sourceTree = "<group>"; };
 		8299EA1A10C12DB9003B147D /* FanObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FanObject.m; sourceTree = "<group>"; };
-		8299EA1B10C130C1003B147D /* Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Test.plist; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,7 +181,6 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				65C120350ADD078A0005FBFF /* PreferencePane.nib */,
-				8299EA1B10C130C1003B147D /* Test.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";

@@ -24,6 +24,15 @@
 
 #define MFApplicationIdentifier     "com.lobotomo.MacProFan"
 
+#pragma mark Helper Method
+
+double SMCGetGPUTemperature() {
+	double gpuTemp = SMCGetTemperature(SMC_KEY_GPU_TEMP);
+	if (gpuTemp <= 0.001) {
+		gpuTemp = SMCGetTemperature(SMC_KEY_GPU_DIODE_TEMP);
+	}
+	return gpuTemp;
+}
 
 @implementation MFDaemon
 @synthesize leftFan, rightFan;
@@ -81,14 +90,13 @@
 // control loop called by NSTimer
 - (void)timer:(NSTimer *)aTimer
 {
-    double temp;
-
     SMCOpen();
 
-    temp = SMCGetTemperature(SMC_KEY_CPU_TEMP);
+    double cpu_temp = SMCGetTemperature(SMC_KEY_CPU_TEMP);
+	double gpu_temp = SMCGetGPUTemperature();
     
-    SMCSetFanRpm(SMC_KEY_FAN0_RPM_MIN, [leftFan calculateTargetRpm:temp]);
-    SMCSetFanRpm(SMC_KEY_FAN1_RPM_MIN, [rightFan calculateTargetRpm:temp]);
+    SMCSetFanRpm(SMC_KEY_FAN0_RPM_MIN, [leftFan calculateTargetRpm:cpu_temp]);
+    SMCSetFanRpm(SMC_KEY_FAN1_RPM_MIN, [rightFan calculateTargetRpm:gpu_temp]);
 
     SMCClose();
 
@@ -194,12 +202,15 @@
     needWrite = YES;
 }
 
-- (void)temperature:(float *)temperature leftFanRpm:(int *)leftFanRpm rightFanRpm:(int *)rightFanRpm
+- (void)cpuTemperature:(float *)cpuTemperature gpuTemperature:(float *)gpuTemperature leftFanRpm:(int *)leftFanRpm rightFanRpm:(int *)rightFanRpm
 {
     SMCOpen();
-    if (temperature) {
-        *temperature = SMCGetTemperature(SMC_KEY_CPU_TEMP);
+    if (cpuTemperature) {
+        *cpuTemperature = SMCGetTemperature(SMC_KEY_CPU_TEMP);
     }
+	if (gpuTemperature) {
+		*gpuTemperature = SMCGetGPUTemperature();
+	}
     if (leftFanRpm) {
         *leftFanRpm = SMCGetFanRpm(SMC_KEY_FAN0_RPM_CUR);
     }

@@ -43,17 +43,18 @@
 
 - (void)updateOutput:(NSTimer *)aTimer
 {
-    float temp;
+    float cpu_temp;
+	float gpu_temp;
     int leftFanRpm;
     int rightFanRpm;
 
-    [daemon temperature:&temp leftFanRpm:&leftFanRpm rightFanRpm:&rightFanRpm];
+    [daemon cpuTemperature:&cpu_temp gpuTemperature:&gpu_temp leftFanRpm:&leftFanRpm rightFanRpm:&rightFanRpm];
     [leftFanField setIntValue:leftFanRpm];
     [rightFanField setIntValue:rightFanRpm];
-    [cpuTemperatureField setStringValue:[transformer transformedValue:[NSNumber numberWithFloat:temp]]];
-	[gpuTemperatureField setStringValue:[transformer transformedValue:[NSNumber numberWithFloat:temp]]];
-    [leftChartView setCurrentTemp:temp];
-	[rightChartView setCurrentTemp:temp];
+    [cpuTemperatureField setStringValue:[transformer transformedValue:[NSNumber numberWithFloat:cpu_temp]]];
+	[gpuTemperatureField setStringValue:[transformer transformedValue:[NSNumber numberWithFloat:gpu_temp]]];
+    [leftChartView setCurrentTemp:cpu_temp];
+	[rightChartView setCurrentTemp:gpu_temp];
 }
 
 - (void)awakeFromNib

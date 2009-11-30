@@ -288,7 +288,7 @@ kern_return_t SMCPrintFans(void)
     UInt32Char_t  key;
     int           totalFans, i;
 
-    result = SMCReadKey("FNum", &val);
+    result = SMCReadKey(SMC_FANS_COUNT, &val);
     if (result != kIOReturnSuccess)
         return kIOReturnError;
 
@@ -337,7 +337,6 @@ void usage(char* prog)
         printf("    -v         : version\n");
         printf("\n");
 }
-
 
 double SMCGetTemperature(char *key)
 {
