@@ -343,6 +343,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = FanControlDaemon;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -456,7 +457,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Debug;
 		};

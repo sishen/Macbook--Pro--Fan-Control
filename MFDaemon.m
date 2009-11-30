@@ -99,6 +99,14 @@
     }
 }
 
+- (void)dealloc
+{
+	[leftFan release];
+	[rightFan release];
+	
+	[super dealloc];
+}
+
 // accessors
 - (int)baseRpm:(FanType)ft
 {

@@ -50,8 +50,10 @@
     [daemon temperature:&temp leftFanRpm:&leftFanRpm rightFanRpm:&rightFanRpm];
     [leftFanField setIntValue:leftFanRpm];
     [rightFanField setIntValue:rightFanRpm];
-    [temperatureField setStringValue:[transformer transformedValue:[NSNumber numberWithFloat:temp]]];
-    [chartView setCurrentTemp:temp];
+    [cpuTemperatureField setStringValue:[transformer transformedValue:[NSNumber numberWithFloat:temp]]];
+	[gpuTemperatureField setStringValue:[transformer transformedValue:[NSNumber numberWithFloat:temp]]];
+    [leftChartView setCurrentTemp:temp];
+	[rightChartView setCurrentTemp:temp];
 }
 
 - (void)awakeFromNib
@@ -72,10 +74,13 @@
 - (void)willSelect
 {
     // update chart
-    [chartView setBaseRpm:[self baseRpm]];
-    [chartView setLowerThreshold:[self lowerThreshold]];
-    [chartView setUpperThreshold:[self upperThreshold]];
-
+    [leftChartView setBaseRpm:[self leftBaseRpm]];
+    [leftChartView setLowerThreshold:[self leftLowerThreshold]];
+    [leftChartView setUpperThreshold:[self leftUpperThreshold]];
+	[rightChartView setBaseRpm:[self rightBaseRpm]];
+	[rightChartView setLowerThreshold:[self rightLowerThreshold]];
+	[rightChartView setUpperThreshold:[self rightUpperThreshold]];
+	
     // update output immediatly, then every 5 seconds
     [self updateOutput:nil];
     timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(updateOutput:)
@@ -91,37 +96,58 @@
 }
 
 // accessors (via daemon)
-- (int)baseRpm
-{
+- (int)leftBaseRpm {
 	return [daemon baseRpm:LeftFan];
 }
 
-- (void)setBaseRpm:(int)newBaseRpm
-{
-	[daemon setBaseRpm:newBaseRpm Fan:LeftFan];
-	[chartView setBaseRpm:newBaseRpm];
+- (int)rightBaseRpm {
+	return [daemon baseRpm:RightFan];
 }
 
-- (float)lowerThreshold
-{
+- (void)setLeftBaseRpm:(int)newBaseRpm {
+	[daemon setBaseRpm:newBaseRpm Fan:LeftFan];
+	[leftChartView setBaseRpm:newBaseRpm];
+}
+
+- (void)setRightBaseRpm:(int)newBaseRpm {
+	[daemon setBaseRpm:newBaseRpm Fan:RightFan];
+	[rightChartView setBaseRpm:newBaseRpm];
+}
+
+- (float)leftLowerThreshold {
 	return [daemon lowerThreshold:LeftFan];
 }
 
-- (void)setLowerThreshold:(float)newLowerThreshold
-{
-	[daemon setLowerThreshold:newLowerThreshold Fan:LeftFan];
-	[chartView setLowerThreshold:newLowerThreshold];
+- (float)rightLowerThreshold {
+	return [daemon lowerThreshold:RightFan];
 }
 
-- (float)upperThreshold
-{
+- (void)setLeftLowerThreshold:(float)newLowerThreshold {
+	[daemon setLowerThreshold:newLowerThreshold Fan:LeftFan];
+	[leftChartView setLowerThreshold:newLowerThreshold];
+}
+
+- (void)setRightLowerThreshold:(float)newLowerThreshold {
+	[daemon setLowerThreshold:newLowerThreshold Fan:RightFan];
+	[rightChartView setLowerThreshold:newLowerThreshold];
+}
+
+- (float)leftUpperThreshold {
 	return [daemon upperThreshold:LeftFan];
 }
 
-- (void)setUpperThreshold:(float)newUpperThreshold
-{
+- (float)rightUpperThreshold {
+	return [daemon upperThreshold:RightFan];
+}
+
+- (void)setLeftUpperThreshold:(float)newUpperThreshold {
 	[daemon setUpperThreshold:newUpperThreshold Fan:LeftFan];
-	[chartView setUpperThreshold:newUpperThreshold];
+	[leftChartView setUpperThreshold:newUpperThreshold];
+}
+
+- (void)setRightUpperThreshold:(float)newUpperThreshold {
+	[daemon setUpperThreshold:newUpperThreshold Fan:RightFan];
+	[rightChartView setUpperThreshold:newUpperThreshold];
 }
 
 - (BOOL)fahrenheit

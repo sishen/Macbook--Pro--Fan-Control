@@ -31,11 +31,14 @@
 	
     // text fields
     IBOutlet NSTextField *leftFanField;
-    IBOutlet NSTextField *rightFanField;
-    IBOutlet NSTextField *temperatureField;
+    IBOutlet NSTextField *cpuTemperatureField;
 
+	IBOutlet NSTextField *rightFanField;
+	IBOutlet NSTextField *gpuTemperatureField;
+	
     // chart view
-    IBOutlet MFChartView *chartView;
+    IBOutlet MFChartView *leftChartView;
+	IBOutlet MFChartView *rightChartView;
 
     // daemon proxy
     MFDaemon *daemon;
@@ -48,12 +51,18 @@
 }
 
 // accessors
-- (int)baseRpm;
-- (void)setBaseRpm:(int)newBaseRpm;
-- (float)lowerThreshold;
-- (void)setLowerThreshold:(float)newLowerThreshold;
-- (float)upperThreshold;
-- (void)setUpperThreshold:(float)newUpperThreshold;
+- (int)leftBaseRpm;
+- (int)rightBaseRpm;
+- (void)setLeftBaseRpm:(int)newBaseRpm;
+- (void)setRightBaseRpm:(int)newBaseRpm;
+- (float)leftLowerThreshold;
+- (float)rightLowerThreshold;
+- (void)setLeftLowerThreshold:(float)newLowerThreshold;
+- (void)setRightLowerThreshold:(float)newLowerThreshold;
+- (float)leftUpperThreshold;
+- (float)rightUpperThreshold;
+- (void)setLeftUpperThreshold:(float)newUpperThreshold;
+- (void)setRightUpperThreshold:(float)newUpperThreshold;
 - (BOOL)fahrenheit;
 - (void)setFahrenheit:(BOOL)newFahrenheit;
 
