@@ -1,0 +1,7 @@
+Hacked based on the Fan Control version 1.2 which is avaiable via http://www.lobotomo.com/products/FanControl/.
+
+The main extended capabilities for now are:
+
+1. Calculate the proper right fan rpm based on the GPU temperature.
+
+2. Show the graphic of individual fans. 
