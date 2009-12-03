@@ -40,6 +40,9 @@
     IBOutlet MFChartView *leftChartView;
 	IBOutlet MFChartView *rightChartView;
 
+	// radio buttons
+	IBOutlet NSMatrix *serviceControl;
+	
     // daemon proxy
     MFDaemon *daemon;
 
@@ -65,5 +68,7 @@
 - (void)setRightUpperThreshold:(float)newUpperThreshold;
 - (BOOL)fahrenheit;
 - (void)setFahrenheit:(BOOL)newFahrenheit;
+
+- (IBAction)doService:(id)sender;
 
 @end

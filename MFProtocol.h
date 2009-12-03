@@ -31,4 +31,7 @@
 - (BOOL)fahrenheit;
 - (void)setFahrenheit:(BOOL)newFahrenheit;
 - (void)cpuTemperature:(float *)cpuTemperature gpuTemperature:(float *)gpuTemperature leftFanRpm:(int *)leftFanRpm rightFanRpm:(int *)rightFanRpm;
+- (void)startTimer;
+- (void)stopTimer;
+- (BOOL)isTimerAvailable;
 @end

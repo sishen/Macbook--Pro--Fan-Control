@@ -56,6 +56,8 @@ double SMCGetGPUTemperature() {
 						  CFSTR(MFApplicationIdentifier), kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
     CFPreferencesSetValue(CFSTR("fahrenheit"), (CFPropertyListRef)[NSNumber numberWithBool:fahrenheit],
                           CFSTR(MFApplicationIdentifier), kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
+	CFPreferencesSetValue(CFSTR("runTimer"), (CFPropertyListRef)[NSNumber numberWithBool:runTimer], 
+						  CFSTR(MFApplicationIdentifier), kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
     CFPreferencesSynchronize(CFSTR(MFApplicationIdentifier), kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
 }
 
@@ -78,27 +80,48 @@ double SMCGetGPUTemperature() {
     if (property) {
         fahrenheit = [(NSNumber *)property boolValue];
     }
+	property = CFPreferencesCopyValue(CFSTR("runTimer"), CFSTR(MFApplicationIdentifier), 
+			   kCFPreferencesAnyUser, kCFPreferencesCurrentHost);
+	if (property) {
+		runTimer = [(NSNumber *)property boolValue];
+	}
 }
 
 // this gets called after application start
 - (void)start
 {
     [self readPreferences];
-    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(timer:) userInfo:nil repeats:YES];
+	[NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(timer:) userInfo:nil repeats:YES];
+}
+
+- (void)startTimer {
+	runTimer = TRUE;
+	needWrite = TRUE;
+}
+
+- (void)stopTimer {
+	runTimer = FALSE;
+	needWrite = TRUE;
+}
+
+- (BOOL)isTimerAvailable {
+	return runTimer;
 }
 
 // control loop called by NSTimer
 - (void)timer:(NSTimer *)aTimer
 {
-    SMCOpen();
+	if (runTimer) {
+		SMCOpen();
 
-    double cpu_temp = SMCGetTemperature(SMC_KEY_CPU_TEMP);
-	double gpu_temp = SMCGetGPUTemperature();
-    
-    SMCSetFanRpm(SMC_KEY_FAN0_RPM_MIN, [leftFan calculateTargetRpm:cpu_temp]);
-    SMCSetFanRpm(SMC_KEY_FAN1_RPM_MIN, [rightFan calculateTargetRpm:gpu_temp]);
+		double cpu_temp = SMCGetTemperature(SMC_KEY_CPU_TEMP);
+		double gpu_temp = SMCGetGPUTemperature();
+		
+		SMCSetFanRpm(SMC_KEY_FAN0_RPM_MIN, [leftFan calculateTargetRpm:cpu_temp]);
+		SMCSetFanRpm(SMC_KEY_FAN1_RPM_MIN, [rightFan calculateTargetRpm:gpu_temp]);
 
-    SMCClose();
+		SMCClose();
+	}
 
     // save preferences
     if (needWrite) {

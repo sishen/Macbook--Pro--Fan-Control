@@ -27,6 +27,7 @@
 	FanObject *rightFan;
     BOOL fahrenheit;
     BOOL needWrite;
+	BOOL runTimer;
 }
 
 @property (nonatomic, retain) FanObject *leftFan;

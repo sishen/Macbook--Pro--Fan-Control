@@ -61,8 +61,8 @@
 {
     // connect to daemon
     NSConnection *connection = [NSConnection connectionWithRegisteredName:MFDaemonRegisteredName host:nil];
-    daemon = [[connection rootProxy] retain];
-    [(id)daemon setProtocolForProxy:@protocol(MFProtocol)];
+	daemon = [[connection rootProxy] retain];
+	[(id)daemon setProtocolForProxy:@protocol(MFProtocol)];
 
     // set transformer mode
     [transformer setFahrenheit:[self fahrenheit]];
@@ -86,6 +86,12 @@
     [self updateOutput:nil];
     timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(updateOutput:)
                      userInfo:nil repeats:YES];
+	
+	if ([daemon isTimerAvailable]) {
+		[serviceControl setState:1 atRow:0 column:0];
+	} else {
+		[serviceControl setState:1 atRow:0 column:1];
+	}
 }
 
 // sent after preference pane is ordered out
@@ -164,6 +170,27 @@
     [self updateOutput:nil];
     [fileOwnerController setContent:nil];
     [fileOwnerController setContent:self];
+}
+
+- (void)startTimer {
+	[daemon startTimer];
+}
+
+- (void)stopTimer {
+	[daemon stopTimer];
+}
+
+- (IBAction)doService:(id)sender {
+	switch ([serviceControl selectedColumn]) {
+		case 0:
+			[self startTimer];
+			break;
+		case 1:
+			[self stopTimer];
+			break;
+		default:
+			break;
+	}
 }
 
 @end

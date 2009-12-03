@@ -248,6 +248,19 @@ UInt32 SMCReadIndexCount(void)
     return _strtoul(val.bytes, val.dataSize, 10);
 }
 
+int getFanCount() {
+	kern_return_t result;
+    SMCVal_t      val;
+    int           totalFans;
+	
+    result = SMCReadKey(SMC_FANS_COUNT, &val);
+    if (result != kIOReturnSuccess)
+        return kIOReturnError;
+	
+    totalFans = _strtoul(val.bytes, val.dataSize, 10); 
+	return totalFans;
+}
+
 kern_return_t SMCPrintAll(void)
 {
     kern_return_t result;
