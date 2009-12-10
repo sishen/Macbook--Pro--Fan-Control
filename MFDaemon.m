@@ -244,7 +244,10 @@ double SMCGetGPUTemperature() {
 }
 
 - (int)getFanCount {
-	return getFanCount();
+    SMCOpen();
+	int count = getFanCount();
+	SMCClose();
+	return count;
 }
 
 @end
