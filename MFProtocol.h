@@ -34,4 +34,5 @@
 - (void)startTimer;
 - (void)stopTimer;
 - (BOOL)isTimerAvailable;
+- (int)getFanCount;
 @end

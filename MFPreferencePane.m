@@ -21,6 +21,7 @@
 #import "MFProtocol.h"
 #import "MFTemperatureTransformer.h"
 #import "MFChartView.h"
+#import "smc.h"
 
 
 @implementation MFPreferencePane
@@ -31,6 +32,11 @@
     if (self = [super initWithBundle:bundle]) {
         transformer = [MFTemperatureTransformer new];
         [NSValueTransformer setValueTransformer:transformer forName:@"MFTemperatureTransformer"];
+
+		// connect to daemon
+		NSConnection *connection = [NSConnection connectionWithRegisteredName:MFDaemonRegisteredName host:nil];
+		daemon = [[connection rootProxy] retain];
+		[(id)daemon setProtocolForProxy:@protocol(MFProtocol)];
     }
     return self;
 }
@@ -57,13 +63,17 @@
 	[rightChartView setCurrentTemp:gpu_temp];
 }
 
-- (void)awakeFromNib
-{
-    // connect to daemon
-    NSConnection *connection = [NSConnection connectionWithRegisteredName:MFDaemonRegisteredName host:nil];
-	daemon = [[connection rootProxy] retain];
-	[(id)daemon setProtocolForProxy:@protocol(MFProtocol)];
+- (NSString *)mainNibName {
+	int fanCount = [daemon getFanCount];
+	if (fanCount == 1) {
+		return @"MBPreferencePane";
+	} else {
+		return @"MBPPreferencePane";
+	}
+}
 
+- (void)awakeFromNib
+{	
     // set transformer mode
     [transformer setFahrenheit:[self fahrenheit]];
 

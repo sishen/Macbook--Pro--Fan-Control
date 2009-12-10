@@ -32,9 +32,10 @@
 		65C11FD40ADCD6940005FBFF /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C1194C0ADC1CC10005FBFF /* IOKit.framework */; };
 		65C1202A0ADD06680005FBFF /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C120290ADD06680005FBFF /* PreferencePanes.framework */; };
 		65C120300ADD06C60005FBFF /* MFPreferencePane.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C1202F0ADD06C60005FBFF /* MFPreferencePane.m */; };
-		65C120360ADD078A0005FBFF /* PreferencePane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 65C120350ADD078A0005FBFF /* PreferencePane.nib */; };
+		65C120360ADD078A0005FBFF /* MBPPreferencePane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 65C120350ADD078A0005FBFF /* MBPPreferencePane.nib */; };
 		65C123E90ADD52A00005FBFF /* MFChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C123E80ADD52A00005FBFF /* MFChartView.m */; };
 		8299EA6510C14159003B147D /* FanObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8299EA1A10C12DB9003B147D /* FanObject.m */; };
+		82C7085510D0F5A4008D8922 /* MBPreferencePane.nib in Resources */ = {isa = PBXBuildFile; fileRef = 82C7085410D0F5A4008D8922 /* MBPreferencePane.nib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,12 +76,13 @@
 		65C120290ADD06680005FBFF /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
 		65C1202E0ADD06C60005FBFF /* MFPreferencePane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPreferencePane.h; sourceTree = "<group>"; };
 		65C1202F0ADD06C60005FBFF /* MFPreferencePane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFPreferencePane.m; sourceTree = "<group>"; };
-		65C120350ADD078A0005FBFF /* PreferencePane.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = PreferencePane.nib; sourceTree = "<group>"; };
+		65C120350ADD078A0005FBFF /* MBPPreferencePane.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = MBPPreferencePane.nib; sourceTree = "<group>"; };
 		65C120930ADD28B90005FBFF /* MFProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFProtocol.h; sourceTree = "<group>"; };
 		65C123E70ADD52A00005FBFF /* MFChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFChartView.h; sourceTree = "<group>"; };
 		65C123E80ADD52A00005FBFF /* MFChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFChartView.m; sourceTree = "<group>"; };
 		8299EA1910C12DB9003B147D /* FanObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanObject.h; sourceTree = "<group>"; };
 		8299EA1A10C12DB9003B147D /* FanObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FanObject.m; sourceTree = "<group>"; };
+		82C7085410D0F5A4008D8922 /* MBPreferencePane.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = MBPreferencePane.nib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,7 +182,8 @@
 				6506A80C0ADE34B300BAE10A /* FanControl.icns */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				65C120350ADD078A0005FBFF /* PreferencePane.nib */,
+				65C120350ADD078A0005FBFF /* MBPPreferencePane.nib */,
+				82C7085410D0F5A4008D8922 /* MBPreferencePane.nib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -263,9 +266,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65C120360ADD078A0005FBFF /* PreferencePane.nib in Resources */,
+				65C120360ADD078A0005FBFF /* MBPPreferencePane.nib in Resources */,
 				6506A80D0ADE34B300BAE10A /* FanControl.icns in Resources */,
 				6506A82C0ADE362700BAE10A /* PrefPaneIcon.tiff in Resources */,
+				82C7085510D0F5A4008D8922 /* MBPreferencePane.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
